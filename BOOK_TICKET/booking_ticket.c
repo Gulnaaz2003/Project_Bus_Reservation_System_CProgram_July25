@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-int busesAvailable = 3;
-int busChoice;
-int seats;
-int max_seats = 40;
-
 void bookTicket();
 void userMenu();
 

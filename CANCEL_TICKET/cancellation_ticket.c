@@ -14,7 +14,7 @@ struct Bus buses[3];
 
 void userMenu();
 void showAvailableBuses();
-void bookTicket();
+void cancelTicket();
 
 int main()
 {
@@ -54,9 +54,9 @@ void userMenu()
     printf("Choose your option: ");
     scanf("%d", &option); 
     
-    if (option == 1)
+    if (option == 2)
     {
-        bookTicket();
+        cancelTicket();
     }
 }
 
@@ -71,32 +71,32 @@ void showAvailableBuses()
     }
 }
 
-void bookTicket()
+void cancelTicket()
 {
-    int busNo;
-    int seats;
+    int busNo; 
+    int seats; 
     int flag = 0;
 
     showAvailableBuses();
 
-    printf("Enter Bus Number to book: ");
+    printf("Enter Bus Number to cancel seats: ");
     scanf("%d", &busNo);
-    
+
     for(int i = 0; i < 3; i++)
     {
         if(buses[i].busNo == busNo)
         {
-            flag = 1;
-            printf("Enter number of seats: ");
+            flag= 1;
+            printf("Enter number of seats to cancel: ");
             scanf("%d", &seats);
-            if(seats > 0 && seats <= buses[i].availableSeats)
+            if(seats > 0 && buses[i].availableSeats + seats <= buses[i].totalSeats)
             {
-                buses[i].availableSeats -= seats;
-                printf("Booking Successful! %d seats booked on Bus %d\n", seats, busNo);
+                buses[i].availableSeats += seats;
+                printf("Cancellation Successful! %d seats canceled on Bus %d\n", seats, busNo);
             }
             else
             {
-                printf("Invalid or insufficient seats!\n");
+                printf("Invalid number of seats!\n");
             }
             break;
         }

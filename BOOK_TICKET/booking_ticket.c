@@ -12,6 +12,7 @@ struct Bus {
 
 struct Bus buses[3]; 
 
+void bookTicket();
 void userMenu();
 void showAvailableBuses();
 void bookTicket();

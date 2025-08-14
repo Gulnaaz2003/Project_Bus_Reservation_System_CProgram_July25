@@ -4,6 +4,7 @@ struct user {
     char username[20];
     char password[20];
 };
+
 struct user users[50];
 int userCount = 0;
 int currentUser = 0;

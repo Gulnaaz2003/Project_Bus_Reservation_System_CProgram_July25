@@ -225,8 +225,8 @@ void showAvailableBuses()
     for(int i = 0; i < 3; i++)
     {
         printf("Bus Number: %d | %s -> %s | Total Seats: %d | Available Seats: %d | Fare: %.2f\n",
-               buses[i].busNo, buses[i].source, buses[i].destination,
-               buses[i].totalSeats, buses[i].availableSeats, buses[i].fare);
+                buses[i].busNo, buses[i].source, buses[i].destination,
+                buses[i].totalSeats, buses[i].availableSeats, buses[i].fare);
     }
 }
 
